@@ -1,7 +1,3 @@
-
-![Logo](https://via.placeholder.com/600x150?text=Your+Logo+Here+600x150)
-
-
 # QT Home
 A Qt application and a server to control it on a Raspberry Pi. This project enables seamless interaction between the application and the server, allowing for efficient management and operation on the Raspberry Pi platform.
 
