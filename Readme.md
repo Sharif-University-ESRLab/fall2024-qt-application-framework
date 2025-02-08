@@ -2,64 +2,53 @@
 ![Logo](https://via.placeholder.com/600x150?text=Your+Logo+Here+600x150)
 
 
-# Project Title
-
-A brief description of what this project does and who it's for comes here.
+# QT Home
+A Qt application and a server to control it on a Raspberry Pi. This project enables seamless interaction between the application and the server, allowing for efficient management and operation on the Raspberry Pi platform.
 
 
 ## Tools
 In this section, you should mention the hardware or simulators utilized in your project.
 - Qemu
-- Gem5
-- ESP32
+- QT
+- Django
 - Raspberry Pi 3B
-- Temperature Sensor
 
 
 ## Implementation Details
 
-In this section, you will explain how you completed your project. It is recommended to use pictures to demonstrate your system model and implementation.
-
-
-Feel free to use sub-topics for your projects. If your project consists of multiple parts (e.g. server, client, and embedded device), create a separate topic for each one.
+The application on the Raspberry Pi was developed using Qt Creator and QML, providing a robust and interactive interface. For communication between the application and the server, we implemented WebSocket, which facilitates real-time data exchange. The server was built using Django along with its specialized libraries, enabling a powerful backend system. It includes a user interface for controlling the Raspberry Pi, ensuring smooth management operations. The connection between the server and the application is maintained through WebSocket, allowing for efficient and seamless interaction.
+Additionally, we utilized QEMU to create a customized image for deploying on the Raspberry Pi. This custom image includes all the necessary tools and dependencies required to run the application, streamlining the deployment process and ensuring a ready-to-use environment.
 
 ## How to Run
-
-In this part, you should provide instructions on how to run your project. Also if your project requires any prerequisites, mention them. 
-
-#### Examples:
-#### Build Project
-Your text comes here
+#### Build Image
+Download the QT shared libaries and you base image and Run the folloing script to create a custom image
 ```bash
-  build --platform=OvmfPkg/OvmfPkgX64.dsc --arch=X64 --buildtarget=RELEASE --tagname=GCC5
+  bash ./code/build-image.sh
 ```
 
 #### Run server
-Your text comes here
-```bash
-  pyhton server.py -p 8080
+
+For running server you should first install all requirements.
+
+```
+pip install -r requirements.txt
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `-p` | `int` | **Required**. Server port |
+After that you can run server using this command:
 
+```
+daphne -p 8000 server.asgi:application
+```
 
-
-## Results
-In this section, you should present your results and provide an explanation for them.
-
-Using image is required.
 
 ## Related Links
-Some links related to your project come here.
- - [EDK II](https://github.com/tianocore/edk2)
- - [ESP32 Pinout](https://randomnerdtutorials.com/esp32-pinout-reference-gpios/)
+ - [QT](https://qt.io)
+ - [qemu](https://www.qemu.org/)
  - [Django Doc](https://docs.djangoproject.com/en/5.0/)
 
 
 ## Authors
-Authors and their github link come here.
-- [@Author1](https://github.com/Sharif-University-ESRLab)
-- [@Author2](https://github.com/Sharif-University-ESRLab)
+- Mahdi Alizadeh
+- Nima Najafi
+- MohammadHosein Salimi
 
